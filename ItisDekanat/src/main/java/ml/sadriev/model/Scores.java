@@ -54,4 +54,13 @@ public class Scores {
     public void setStudents(Students students) {
         this.students = students;
     }
+
+    public static void fillScores() {
+        Scores scores1 = new Scores();
+        Scores scores2 = new Scores();
+        Scores scores3 = new Scores();
+        Scores scores4 = new Scores();
+        Scores scores5 = new Scores();
+        Scores scores6 = new Scores();
+    }
 }
