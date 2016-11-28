@@ -22,8 +22,8 @@ public class Students {
 
     private String group;
 
-    @OneToMany(mappedBy = "")
-    private List<Scores> scores;
+    //@ManyToOne(mappedBy = "")
+    //private List<Scores> scores;*/
 
     public int getId() {
         return id;
