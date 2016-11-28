@@ -8,6 +8,14 @@ CREATE TABLE post (
 CREATE SEQUENCE post_seq;
 
 
+CREATE TABLE "user" (
+  id BIGINT NOT NULL PRIMARY KEY,
+  username VARCHAR(24) NOT NULL,
+  password VARCHAR(10) NOT NULL
+);
+
+CREATE SEQUENCE user_seq;
+
 
 
 
