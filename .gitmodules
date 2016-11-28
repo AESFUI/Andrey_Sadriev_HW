@@ -1,9 +1,0 @@
-[submodule "JB1_Matrix"]
-	path = JB1_Matrix
-	url = https://github.com/AESFUI/JB1_Matrix.git
-[submodule "JB1_Shop"]
-	path = JB1_Shop
-	url = https://github.com/AESFUI/JB1_Shop.git
-[submodule "JB2_DictionaryTest"]
-	path = JB2_DictionaryTest
-	url = https://github.com/AESFUI/JB2_DictionaryTest.git

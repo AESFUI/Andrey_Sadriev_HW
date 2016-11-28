@@ -1,8 +1,7 @@
 package inno.controller;
 
 import inno.model.Post;
-import inno.model.User;
-import inno.repository.PostRepository;
+import inno.model.Users;
 import inno.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,8 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/users")
@@ -28,11 +25,11 @@ public class UserController {
     }*/
 
     @RequestMapping(value = "/users/create", method = RequestMethod.POST)
-    public String addNewPost(@ModelAttribute @Valid User user, BindingResult result) {
+    public String addNewPost(@ModelAttribute @Valid Users users, BindingResult result) {
         if (result.hasErrors()) {
             return "users/add";
         }
-        userRepository.create(user);
+        userRepository.create(users);
         return "redirect:/users/add";
     }
 

@@ -1,17 +1,17 @@
 package inno.repository;
 
-import inno.model.User;
+import inno.model.Users;
 
 
 public interface UserRepository {
 
     //List<Post> findAll();
 
-    //User find(Long id);
+    //Users find(Long id);
 
-    boolean create(User user);
+    boolean create(Users users);
 
-    //boolean isExist(User user);
+    //boolean isExist(Users user);
 
     //void update(Post post);
 

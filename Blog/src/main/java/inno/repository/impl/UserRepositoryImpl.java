@@ -1,13 +1,11 @@
 package inno.repository.impl;
 
-import inno.model.Post;
-import inno.model.User;
+import inno.model.Users;
 import inno.repository.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 /**
@@ -22,14 +20,14 @@ public class UserRepositoryImpl implements UserRepository{
     EntityManager em;
 
     @Override
-    public boolean create(User user) {
+    public boolean create(Users users) {
         //добавить запрет на создание другого юзера с тем же именем
-        em.persist(user);
+        em.persist(users);
         return true;
     }
 
     /*@Override
-    public boolean isExist(User user) {
+    public boolean isExist(Users user) {
         if () {
             return true;
         }
@@ -37,8 +35,8 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
-    public User find(Long id) {
-        TypedQuery<User> query = em.createQuery("SELECT username FROM User user", User.class);
+    public Users find(Long id) {
+        TypedQuery<Users> query = em.createQuery("SELECT username FROM Users user", Users.class);
         return query.getResultList();
     }*/
 }
