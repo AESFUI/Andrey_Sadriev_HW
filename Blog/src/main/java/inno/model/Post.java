@@ -48,7 +48,6 @@ public class Post {
         this.text = text;
     }
 
-
     public Long getId() {
         return id;
     }

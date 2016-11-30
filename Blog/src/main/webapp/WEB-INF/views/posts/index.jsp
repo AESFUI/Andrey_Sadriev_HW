@@ -26,6 +26,11 @@
     <p>Пока ничего нету</p>
 </c:if>
 
+<a href="/posts/login">Войти</a><br>
+
+<a href="/posts/login/register">Зарегистрироваться</a><br>
+
+
 <c:forEach var="post" items="${posts}">
     <h3>${post.title}</h3>
     <small>${post.date}</small>

@@ -9,7 +9,7 @@ public interface UserRepository {
 
     //Users find(Long id);
 
-    boolean create(Users users);
+    boolean add(Users users);
 
     //boolean isExist(Users user);
 

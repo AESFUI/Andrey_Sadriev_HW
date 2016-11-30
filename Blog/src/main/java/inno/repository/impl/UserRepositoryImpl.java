@@ -20,7 +20,7 @@ public class UserRepositoryImpl implements UserRepository{
     EntityManager em;
 
     @Override
-    public boolean create(Users users) {
+    public boolean add(Users users) {
         //добавить запрет на создание другого юзера с тем же именем
         em.persist(users);
         return true;

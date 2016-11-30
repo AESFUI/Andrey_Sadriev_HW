@@ -13,21 +13,19 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usersSequence")
-    @Column(name = "id")
     private Long id;
 
     @Length(min = 3, max = 24)
-    @Column
     @NotEmpty
     private String userName;
 
     @Length(min = 5, max = 10)
-    @Column
-    @NotEmpty
     private String password;
 
 /*    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Comment> comments;*/
+
+    public Users() {}
 
     public Users(String userName, String password) {
         this.userName = userName;
@@ -50,7 +48,7 @@ public class Users {
         this.userName = userName;
     }
 
-    private String getPassword() {
+    public String getPassword() {
         return password;
     }
 
