@@ -11,9 +11,9 @@ public interface UserRepository {
 
     boolean add(Users users);
 
-    //boolean isExist(Users user);
+    boolean isExist(Users user);
 
-    //void update(Post post);
+    public boolean isExistForAuto(Users users);
 
     //boolean remove(Long id);
 

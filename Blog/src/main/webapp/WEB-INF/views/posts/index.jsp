@@ -20,15 +20,15 @@
     <input type="submit" value="Search">
 </form>
 
-<a href="/posts/add">Добавить новый пост</a>
+<a href="/posts/add">Добавить новый пост</a><br>
 
 <c:if test="${posts.size() == 0}">
     <p>Пока ничего нету</p>
 </c:if>
 
-<a href="/posts/login">Войти</a><br>
+<a href="/posts/login">Войти</a>
 
-<a href="/posts/login/register">Зарегистрироваться</a><br>
+<a href="/posts/register">Зарегистрироваться</a><br>
 
 
 <c:forEach var="post" items="${posts}">

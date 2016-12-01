@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Регистрация</title>
+    <title>Авторизация</title>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
             <td><form:errors path="password"/></td>
         </tr>
     </table>
-    <input type="submit" name="Регистрация" value="save"/>
+    <input type="submit" name="Вход на форум" value="Вход"/>
 </form:form>
 
 </body>
