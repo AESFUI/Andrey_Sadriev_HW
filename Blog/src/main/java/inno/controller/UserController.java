@@ -52,18 +52,17 @@ public class UserController {
 
         Users userLogin = users;
         if (userRepository.isExist(userLogin)) {
-            userAutoSession(userLogin, request);
+            userAutoSession(users, request);
             //открыть сессию, разбираться с правами
         } else {
             //сказать, что юзер слишком дерзок и надо бы повторить ввод логина/пароля
         }
-
         return "redirect:/posts";
     }
 
     public boolean userAutoSession(Users users, HttpServletRequest request) {
         HttpSession session = request.getSession(true);
-        session.setAttribute("Id", users.getId().toString());
+        session.setAttribute("Id", users.getId());
         session.setAttribute("userName", users.getUserName());
         return true;
     }
