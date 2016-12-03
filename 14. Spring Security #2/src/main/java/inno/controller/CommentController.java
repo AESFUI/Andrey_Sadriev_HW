@@ -2,6 +2,7 @@ package inno.controller;
 
 import inno.model.Post;
 import inno.model.User;
+import inno.repository.CommentRepository;
 import inno.repository.PostRepository;
 import inno.security.SecurityUtils;
 import inno.service.PostService;
@@ -19,13 +20,13 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/posts")
-public class PostController {
+public class CommentController {
 
     @Autowired
     PostRepository postRepository;
 
-//    @Autowired
-//    CommentRepository commentRepository;
+    @Autowired
+    CommentRepository commentRepository;
 
     @Autowired
     PostService postService;
@@ -94,8 +95,6 @@ public class PostController {
 
         return "redirect:/posts";
     }
-
-    //@RequestMapping(value = '/{id}/addComment')
 
     private boolean userCanEditPost(Post post) {
         User currentUser = SecurityUtils.getCurrentUser();

@@ -23,6 +23,8 @@
     <hr>
 </c:forEach>
 
+<a href="/posts/${post.id}/addcomment">Добавить комментарий</a><br>
+
 
 <a href="/posts">Вернуться на главную</a>
 </body>
