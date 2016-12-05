@@ -2,7 +2,6 @@ package inno.controller;
 
 import inno.model.Post;
 import inno.model.User;
-import inno.repository.CommentRepository;
 import inno.repository.PostRepository;
 import inno.security.SecurityUtils;
 import inno.service.PostService;
@@ -20,18 +19,18 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/posts")
-public class CommentController {
-
-    /*@Autowired
-    PostRepository postRepository;*/
+public class PostController {
 
     @Autowired
-    CommentRepository commentRepository;
+    PostRepository postRepository;
 
-    /*@Autowired
-    PostService postService;*/
+//    @Autowired
+//    CommentRepository commentRepository;
 
-/*    @RequestMapping
+    @Autowired
+    PostService postService;
+
+    @RequestMapping
     public String getAllPosts(@RequestParam(value = "phrase", required = false) String phrase, ModelMap map) {
         List<Post> posts = postRepository.findAll();
         if (phrase != null) {
@@ -57,8 +56,11 @@ public class CommentController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String showPost(@PathVariable("id") Long id, ModelMap map) {
+    public String showPost(@PathVariable("id") Long id, ModelMap map) throws Exception {
         Post post = postRepository.findOne(id);
+        if (post == null) {
+            throw new Exception("post not found");
+        }
         map.addAttribute("post", post);
         return "/posts/show";
     }
@@ -68,7 +70,7 @@ public class CommentController {
     public String deletePost(@PathVariable("id") Long id) {
         Post post = postRepository.findOne(id);
         if (!userCanEditPost(post)) {
-            throw new AccessDeniedException("Access denied");
+            throw new AccessDeniedException("Acces denied");
         }
         postRepository.delete(post);
         return "redirect:/posts";
@@ -99,5 +101,5 @@ public class CommentController {
     private boolean userCanEditPost(Post post) {
         User currentUser = SecurityUtils.getCurrentUser();
         return currentUser != null && post.getUser().getId().equals(currentUser.getId());
-    }*/
+    }
 }

@@ -2,6 +2,7 @@ package inno.controller;
 
 import inno.model.Post;
 import inno.model.User;
+import inno.repository.CommentRepository;
 import inno.repository.PostRepository;
 import inno.security.SecurityUtils;
 import inno.service.PostService;
@@ -24,8 +25,8 @@ public class PostController {
     @Autowired
     PostRepository postRepository;
 
-//    @Autowired
-//    CommentRepository commentRepository;
+    /*@Autowired
+    CommentRepository commentRepository;*/
 
     @Autowired
     PostService postService;
