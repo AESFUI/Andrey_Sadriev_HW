@@ -54,7 +54,6 @@ public class UserRepositoryImpl implements UserRepository{
         TypedQuery<Users> query = em.createQuery(
                 "SELECT users from Users users WHERE username=:username", Users.class);
         query.setParameter("username", userName);
-        //query.setParameter("password", password);
 
         if (!query.getResultList().isEmpty()) {
             return true;

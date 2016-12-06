@@ -1,5 +1,7 @@
 package inno.filter;
 
+import inno.model.Users;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -19,7 +21,6 @@ public class LoginFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        this.filterConfig = filterConfig;
     }
 
     @Override
@@ -28,15 +29,20 @@ public class LoginFilter implements Filter {
         System.out.println("Зашли в фильтр");
 
         HttpServletRequest httpRequest = (HttpServletRequest) request;
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession();
 
-        if (session == null || session.getAttribute("userName") == null) {
-            HttpServletResponse httpResponse = (HttpServletResponse) response;
+        Users users = (Users) session.getAttribute("User");
 
-            httpResponse.sendRedirect("accessdenied.jsp");
-            return;
+        //String loginPage="/posts/login.jsp";
+        //boolean onLogin = (httpRequest.getRequestURI().equals("/" + loginPage))? true : false;
+
+        //if (users == null && !onLogin) {
+        if (users != null) {
+            chain.doFilter(request, response);
+        } else {
+            httpResponse.sendRedirect("/posts/login");
         }
-        chain.doFilter(request, response);
     }
 
     @Override

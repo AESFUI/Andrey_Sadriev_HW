@@ -28,7 +28,7 @@ public class PostRepositoryImpl implements PostRepository {
     @Override
     public Post find(Long id) {
         Post post = em.find(Post.class, id);
-        post.getComments().size();
+        //post.getComments().size();
         return post;
     }
 

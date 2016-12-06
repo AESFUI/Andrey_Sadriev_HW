@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td><form:label path="password">Пароль</form:label></td>
-            <td><form:input path="password"/></td>
+            <td><form:password path="password"/></td>
             <td><form:errors path="password"/></td>
         </tr>
     </table>

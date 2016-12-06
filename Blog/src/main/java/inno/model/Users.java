@@ -22,7 +22,7 @@ public class Users {
     @Length(min = 5, max = 10)
     private String password;
 
-/*    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    /*@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Comment> comments;*/
 
     public Users() {}
