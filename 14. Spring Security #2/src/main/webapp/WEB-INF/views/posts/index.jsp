@@ -34,6 +34,7 @@
     <a href="/posts/${post.id}">Читать полностью...</a><br>
     <security:authentication property="principal.id" var="user_id"/>
     <security:authorize access="${user_id eq post.user.id}">
+        <!--TODO разрешить админу удалять посты?-->
         <a href="/posts/${post.id}/delete">Удалить</a>
         <a href="/posts/${post.id}/edit">Редактировать</a>
     </security:authorize>
