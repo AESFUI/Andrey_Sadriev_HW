@@ -9,6 +9,7 @@ import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -34,14 +35,12 @@ public class LoginFilter implements Filter {
 
         Users users = (Users) session.getAttribute("User");
 
-        //String loginPage="/posts/login.jsp";
-        //boolean onLogin = (httpRequest.getRequestURI().equals("/" + loginPage))? true : false;
-
-        //if (users == null && !onLogin) {
         if (users != null) {
             chain.doFilter(request, response);
         } else {
-            httpResponse.sendRedirect("/posts/login");
+            //httpResponse.sendRedirect("/posts/login");
+            httpResponse.sendError(401, "Нельзя без документов!");
+            return;
         }
     }
 

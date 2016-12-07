@@ -18,10 +18,10 @@
 
 <h2>Комментарии: </h2>
 
-<c:forEach var="comment" items="${post.comments}">
+<%--<c:forEach var="comment" items="${post.comments}">
     <p>${comment.text}</p>
     <hr>
-</c:forEach>
+</c:forEach>--%>
 
 
 <a href="/posts">Вернуться на главную</a>
